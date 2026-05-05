@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevPath — Tech Stack Recommender</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="daaz.css" />
+</head>
+<body>
+
+<div class="app-wrap">
+
+  <!-- ── Nav ── -->
+  <nav class="nav">
+    <div class="nav-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+      </svg>
+    </div>
+    <span class="nav-name">DevPath</span>
+    <span class="nav-tag">v2.0 · AI-powered</span>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       HERO
+  ══════════════════════════════════════ -->
+  <div class="hero">
+    <div class="hero-eyebrow">
+      <span class="hero-eyebrow-dot"></span>
+      AI-Powered Tech Stack Intelligence
+    </div>
+    <h1 class="hero-title">Stop guessing your<br><em>tech stack.</em></h1>
+    <p class="hero-desc">
+      DevPath analyzes your project type, scale, team, and priorities — then delivers
+      ranked, evidence-based stack recommendations with honest tradeoff analysis.
+      No vendor bias. No marketing spin. Just the right stack for <em>your</em> project.
+    </p>
+    <div class="hero-cta-row">
+      <a href="app.html" class="btn-primary btn-hero">
+        <span>Analyze my project</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+      <div class="hero-cta-note">Free · Powered by Claude · No signup needed</div>
+    </div>
+
+    <!-- Preview Card -->
+    <div class="hero-preview">
+      <div class="preview-bar">
+        <div class="preview-dot r"></div>
+        <div class="preview-dot y"></div>
+        <div class="preview-dot g"></div>
+        <span class="preview-bar-label">DevPath — Analysis complete</span>
+      </div>
+      <div class="preview-body">
+        <div class="preview-rec-badge">✦ #1 Recommended Stack</div>
+        <div class="preview-stack-name">Next.js + PostgreSQL + Railway</div>
+        <div class="preview-chips">
+          <span class="preview-chip fe">Frontend: Next.js 14 + TypeScript</span>
+          <span class="preview-chip be">Backend: Next.js API Routes</span>
+          <span class="preview-chip db">Database: PostgreSQL + Prisma</span>
+          <span class="preview-chip inf">Infra: Railway + Vercel</span>
+        </div>
+        <div class="preview-bars">
+          <div class="preview-bar-row">
+            <span>Speed to build</span>
+            <div class="preview-track"><div class="preview-fill pf-speed" style="width:88%"></div></div>
+            <span>88</span>
+          </div>
+          <div class="preview-bar-row">
+            <span>Performance</span>
+            <div class="preview-track"><div class="preview-fill pf-perf" style="width:76%"></div></div>
+            <span>76</span>
+          </div>
+          <div class="preview-bar-row">
+            <span>Scalability</span>
+            <div class="preview-track"><div class="preview-fill pf-scale" style="width:82%"></div></div>
+            <span>82</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       STATS BAR
+  ══════════════════════════════════════ -->
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num">8</div>
+      <div class="stat-label">Project types</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">5</div>
+      <div class="stat-label">Scoring dimensions</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Ranked stacks</div>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat-item">
+      <div class="stat-num">~15s</div>
+      <div class="stat-label">To your report</div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       HOW IT WORKS
+  ══════════════════════════════════════ -->
+  <div class="how-section">
+    <div class="how-eyebrow">How it works</div>
+    <h2 class="how-title">From requirements to report<br>in five steps.</h2>
+    <p class="how-subtitle">
+      DevPath doesn't just throw popular frameworks at you. It walks through your actual situation —
+      what you're building, who's building it, and what you care about most — before making any judgment.
+      Every recommendation is justified, scored, and compared head-to-head.
+    </p>
+
+    <div class="how-steps">
+
+      <div class="how-step">
+        <div class="how-step-num">01</div>
+        <div class="how-step-body">
+          <div class="how-step-title">Describe your project type</div>
+          <div class="how-step-desc">
+            Pick from 8 categories: Web App, Mobile, API/Backend, E-Commerce, Real-time,
+            AI/ML Platform, Data Platform, or CMS. Each category unlocks different evaluation
+            criteria — a real-time chat app is scored very differently from a data analytics platform.
+          </div>
+        </div>
+      </div>
+      <div class="how-connector"></div>
+
+      <div class="how-step">
+        <div class="how-step-num">02</div>
+        <div class="how-step-body">
+          <div class="how-step-title">Set your expected scale</div>
+          <div class="how-step-desc">
+            Choose from MVP (under 1K users) up to Large Scale (1M+ global users). Scale is one of
+            the most decisive factors in stack selection — a stack perfect for a startup prototype
+            can become a serious liability at 500K users. DevPath accounts for this from the start.
+          </div>
+        </div>
+      </div>
+      <div class="how-connector"></div>
+
+      <div class="how-step">
+        <div class="how-step-num">03</div>
+        <div class="how-step-body">
+          <div class="how-step-title">Define your team composition</div>
+          <div class="how-step-desc">
+            Solo developer, small generalist team, specialized roles, or enterprise? Team structure
+            dramatically narrows what's realistic. A solo dev shouldn't adopt a microservices
+            architecture; an enterprise team has different governance and tooling requirements entirely.
+          </div>
+        </div>
+      </div>
+      <div class="how-connector"></div>
+
+      <div class="how-step">
+        <div class="how-step-num">04</div>
+        <div class="how-step-body">
+          <div class="how-step-title">Pick your top priorities</div>
+          <div class="how-step-desc">
+            Select up to 3: Fast development, High performance, Scalability, Low cost/OSS,
+            Developer experience, Security &amp; compliance, Large hiring pool, Long-term stability,
+            or Rich ecosystem. These aren't just labels — they are directly weighted in the scoring
+            rubric that Claude uses to rank each stack.
+          </div>
+        </div>
+      </div>
+      <div class="how-connector"></div>
+
+      <div class="how-step">
+        <div class="how-step-num">05</div>
+        <div class="how-step-body">
+          <div class="how-step-title">Get your full ranked report</div>
+          <div class="how-step-desc">
+            In about 15 seconds, you receive 3 fully ranked stacks — each with a complete layer
+            breakdown (frontend, backend, database, auth, infra), scores across 5 dimensions,
+            honest weaknesses, head-to-head comparisons between #1 and #2/#3, and a final
+            verdict that references your exact priorities by name.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       FEATURE GRID
+  ══════════════════════════════════════ -->
+  <div class="feat-section">
+    <div class="how-eyebrow">What you get</div>
+    <h2 class="how-title">Built for real decisions,<br>not demos.</h2>
+    <p class="how-subtitle">
+      Most stack guides are written for general audiences. DevPath generates a recommendation
+      tailored specifically to your inputs — so the output is always contextual, never generic.
+    </p>
+
+    <div class="feat-grid">
+      <div class="feat-card">
+        <div class="feat-icon">🎯</div>
+        <div class="feat-title">Unbiased, objective scoring</div>
+        <div class="feat-desc">
+          Each stack is scored 0–100 across 5 dimensions relative to the others. There's no
+          vendor sponsorship, no trending bias — just how well each stack fits your stated profile.
+        </div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">⚖️</div>
+        <div class="feat-title">Head-to-head comparison</div>
+        <div class="feat-desc">
+          #1 vs #2 and #1 vs #3 are compared dimension by dimension. You'll know exactly why
+          the top pick beats the others for your use case — not in general, but for your priorities.
+        </div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔍</div>
+        <div class="feat-title">Honest weaknesses exposed</div>
+        <div class="feat-desc">
+          Every recommended stack includes a candid breakdown of where it falls short. DevPath
+          doesn't hide tradeoffs behind enthusiasm. If a stack has a steep learning curve or
+          poor cold-start performance, you'll know before you commit.
+        </div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">⚡</div>
+        <div class="feat-title">Senior architect reasoning</div>
+        <div class="feat-desc">
+          Powered by Claude — the same quality of reasoning you'd get from a senior architect
+          who has evaluated dozens of stacks across many project types. Delivered in seconds,
+          not days of research.
+        </div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🧩</div>
+        <div class="feat-title">Full stack, every layer</div>
+        <div class="feat-desc">
+          Each recommendation covers all five layers: frontend framework, backend runtime,
+          database and ORM, authentication solution, and infrastructure/hosting. A complete
+          picture — not just a framework suggestion.
+        </div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🔄</div>
+        <div class="feat-title">Instant re-analysis</div>
+        <div class="feat-desc">
+          Changed your mind on priorities? Reconsidering scale? Hit "Start over" and run a
+          new analysis in seconds. Iterate freely until the recommendation truly matches your
+          project reality.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════
+       BOTTOM CTA
+  ══════════════════════════════════════ -->
+  <div class="bottom-cta">
+    <div class="bottom-cta-glow"></div>
+    <div class="bottom-cta-label">Ready to find your stack?</div>
+    <h2 class="bottom-cta-title">Stop debating.<br>Start building.</h2>
+    <p class="bottom-cta-desc">
+      Answer 5 targeted questions about your project and receive a senior-architect-quality
+      recommendation — with full reasoning, tradeoff comparisons, and honest weaknesses —
+      in under 20 seconds.
+    </p>
+    <a href="app.html" class="btn-primary btn-hero">
+      <span>Analyze my project</span>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+      </svg>
+    </a>
+  </div>
+
+  <footer>DevPath · Powered by Claude Sonnet · Built for developers</footer>
+
+</div><!-- /app-wrap -->
+
+</body>
+</html>

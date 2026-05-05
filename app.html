@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DevPath — Analyze Your Stack</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Instrument+Serif:ital@0;1&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="daaz.css" />
+</head>
+<body>
+
+<div class="app-wrap">
+
+  <!-- ── Nav ── -->
+  <nav class="nav">
+    <a href="index.html" class="nav-home-btn" title="Back to home">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/>
+      </svg>
+      Home
+    </a>
+    <div class="nav-logo">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+      </svg>
+    </div>
+    <span class="nav-name">DevPath</span>
+    <span class="nav-tag">v2.0 · AI-powered</span>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       WIZARD
+  ══════════════════════════════════════ -->
+  <div id="mainApp">
+
+    <!-- Step Indicator -->
+    <div class="step-bar" id="stepBar">
+      <div class="step-item">
+        <div class="step-dot-wrap">
+          <div class="step-dot active" id="sd1"><span>1</span></div>
+          <div class="step-label active" id="sl1">Project</div>
+        </div>
+        <div class="step-connector" id="sc1"></div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot-wrap">
+          <div class="step-dot" id="sd2"><span>2</span></div>
+          <div class="step-label" id="sl2">Scale</div>
+        </div>
+        <div class="step-connector" id="sc2"></div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot-wrap">
+          <div class="step-dot" id="sd3"><span>3</span></div>
+          <div class="step-label" id="sl3">Team</div>
+        </div>
+        <div class="step-connector" id="sc3"></div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot-wrap">
+          <div class="step-dot" id="sd4"><span>4</span></div>
+          <div class="step-label" id="sl4">Priorities</div>
+        </div>
+        <div class="step-connector" id="sc4"></div>
+      </div>
+      <div class="step-item">
+        <div class="step-dot-wrap">
+          <div class="step-dot" id="sd5"><span>5</span></div>
+          <div class="step-label" id="sl5">Context</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Step 1: Project Type ── -->
+    <div class="section active" id="step1">
+      <div class="q-eyebrow">Step 1 of 5</div>
+      <h2 class="q-title">What are you building?</h2>
+      <p class="q-sub">Select the category that best describes your project.</p>
+      <div class="option-grid">
+        <div class="option-card" data-val="web_app" onclick="pick(this,'type',1)">
+          <span class="oc-icon">🌐</span>
+          <span class="oc-name">Web Application</span>
+          <span class="oc-hint">SaaS, dashboards, portals, tools</span>
+        </div>
+        <div class="option-card" data-val="mobile_app" onclick="pick(this,'type',1)">
+          <span class="oc-icon">📱</span>
+          <span class="oc-name">Mobile App</span>
+          <span class="oc-hint">iOS, Android, cross-platform</span>
+        </div>
+        <div class="option-card" data-val="api_backend" onclick="pick(this,'type',1)">
+          <span class="oc-icon">⚙️</span>
+          <span class="oc-name">API / Backend</span>
+          <span class="oc-hint">Microservices, REST, GraphQL</span>
+        </div>
+        <div class="option-card" data-val="ecommerce" onclick="pick(this,'type',1)">
+          <span class="oc-icon">🛒</span>
+          <span class="oc-name">E-Commerce</span>
+          <span class="oc-hint">Online store, marketplace</span>
+        </div>
+        <div class="option-card" data-val="realtime" onclick="pick(this,'type',1)">
+          <span class="oc-icon">⚡</span>
+          <span class="oc-name">Real-time App</span>
+          <span class="oc-hint">Chat, live collaboration, games</span>
+        </div>
+        <div class="option-card" data-val="ml_ai" onclick="pick(this,'type',1)">
+          <span class="oc-icon">🧠</span>
+          <span class="oc-name">AI / ML Platform</span>
+          <span class="oc-hint">Models, pipelines, inference</span>
+        </div>
+        <div class="option-card" data-val="data_platform" onclick="pick(this,'type',1)">
+          <span class="oc-icon">📊</span>
+          <span class="oc-name">Data Platform</span>
+          <span class="oc-hint">ETL, analytics, BI dashboards</span>
+        </div>
+        <div class="option-card" data-val="cms" onclick="pick(this,'type',1)">
+          <span class="oc-icon">📝</span>
+          <span class="oc-name">Content / CMS</span>
+          <span class="oc-hint">Blog, media, documentation</span>
+        </div>
+      </div>
+      <div class="nav-row">
+        <button class="btn-primary" id="next1" disabled onclick="goStep(2)">Continue →</button>
+        <span class="progress-hint" id="prog1"></span>
+      </div>
+    </div>
+
+    <!-- ── Step 2: Scale ── -->
+    <div class="section" id="step2">
+      <div class="q-eyebrow">Step 2 of 5</div>
+      <h2 class="q-title">Expected scale?</h2>
+      <p class="q-sub">This shapes infrastructure, database, and architecture choices significantly.</p>
+      <div class="option-grid">
+        <div class="option-card" data-val="mvp" onclick="pick(this,'scale',2)">
+          <span class="oc-icon">🌱</span>
+          <span class="oc-name">MVP / Prototype</span>
+          <span class="oc-hint">Validate fast. Under 1K users.</span>
+        </div>
+        <div class="option-card" data-val="small" onclick="pick(this,'scale',2)">
+          <span class="oc-icon">🚀</span>
+          <span class="oc-name">Small Scale</span>
+          <span class="oc-hint">1K – 50K monthly active users</span>
+        </div>
+        <div class="option-card" data-val="medium" onclick="pick(this,'scale',2)">
+          <span class="oc-icon">🏢</span>
+          <span class="oc-name">Medium Scale</span>
+          <span class="oc-hint">50K – 1M monthly active users</span>
+        </div>
+        <div class="option-card" data-val="large" onclick="pick(this,'scale',2)">
+          <span class="oc-icon">🌍</span>
+          <span class="oc-name">Large Scale</span>
+          <span class="oc-hint">1M+ users, global distribution</span>
+        </div>
+      </div>
+      <div class="nav-row">
+        <button class="btn-back" onclick="goStep(1)">← Back</button>
+        <button class="btn-primary" id="next2" disabled onclick="goStep(3)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- ── Step 3: Team ── -->
+    <div class="section" id="step3">
+      <div class="q-eyebrow">Step 3 of 5</div>
+      <h2 class="q-title">Your team situation?</h2>
+      <p class="q-sub">Team size and composition heavily influence which stacks are realistic to maintain.</p>
+      <div class="option-grid">
+        <div class="option-card" data-val="solo" onclick="pick(this,'team',3)">
+          <span class="oc-icon">👤</span>
+          <span class="oc-name">Solo Developer</span>
+          <span class="oc-hint">Just me, wearing all hats</span>
+        </div>
+        <div class="option-card" data-val="small_team" onclick="pick(this,'team',3)">
+          <span class="oc-icon">👥</span>
+          <span class="oc-name">Small Team</span>
+          <span class="oc-hint">2–5 devs, generalist roles</span>
+        </div>
+        <div class="option-card" data-val="specialized" onclick="pick(this,'team',3)">
+          <span class="oc-icon">🎯</span>
+          <span class="oc-name">Specialized Team</span>
+          <span class="oc-hint">Dedicated FE / BE / Ops roles</span>
+        </div>
+        <div class="option-card" data-val="enterprise" onclick="pick(this,'team',3)">
+          <span class="oc-icon">🏛️</span>
+          <span class="oc-name">Enterprise Team</span>
+          <span class="oc-hint">10+ devs, governance & compliance</span>
+        </div>
+      </div>
+      <div class="nav-row">
+        <button class="btn-back" onclick="goStep(2)">← Back</button>
+        <button class="btn-primary" id="next3" disabled onclick="goStep(4)">Continue →</button>
+      </div>
+    </div>
+
+    <!-- ── Step 4: Priorities ── -->
+    <div class="section" id="step4">
+      <div class="q-eyebrow">Step 4 of 5</div>
+      <h2 class="q-title">What matters most?</h2>
+      <p class="q-sub">Select up to 3 priorities. These are weighted heavily in the recommendation.</p>
+      <div class="tag-grid">
+        <div class="tag-pill" data-val="speed_dev" onclick="togglePriority(this)">⚡ Fast development</div>
+        <div class="tag-pill" data-val="performance" onclick="togglePriority(this)">🔥 High performance</div>
+        <div class="tag-pill" data-val="scalability" onclick="togglePriority(this)">📈 Scalability</div>
+        <div class="tag-pill" data-val="cost" onclick="togglePriority(this)">💰 Low cost / OSS</div>
+        <div class="tag-pill" data-val="dx" onclick="togglePriority(this)">🧑‍💻 Developer experience</div>
+        <div class="tag-pill" data-val="security" onclick="togglePriority(this)">🔒 Security & compliance</div>
+        <div class="tag-pill" data-val="hiring" onclick="togglePriority(this)">🌐 Large hiring pool</div>
+        <div class="tag-pill" data-val="longevity" onclick="togglePriority(this)">🏗️ Long-term stability</div>
+        <div class="tag-pill" data-val="ecosystem" onclick="togglePriority(this)">📦 Rich ecosystem</div>
+      </div>
+      <div class="nav-row">
+        <button class="btn-back" onclick="goStep(3)">← Back</button>
+        <button class="btn-primary" id="next4" disabled onclick="goStep(5)">Continue →</button>
+        <span class="progress-hint" id="prog4">0 / 3 selected</span>
+      </div>
+    </div>
+
+    <!-- ── Step 5: Context ── -->
+    <div class="section" id="step5">
+      <div class="q-eyebrow">Step 5 of 5</div>
+      <h2 class="q-title">Any additional context?</h2>
+      <p class="q-sub">Optional, but highly recommended. Mention existing languages, infrastructure, constraints, or goals.</p>
+      <textarea
+        id="extraCtx"
+        class="dp-textarea"
+        placeholder="e.g. Our team knows Python but is open to learning. We're on AWS, prefer open source, and need strong TypeScript support. Budget is tight — managed services are okay but not if they get expensive at scale."
+      ></textarea>
+      <div class="nav-row">
+        <button class="btn-back" onclick="goStep(4)">← Back</button>
+        <button class="btn-primary" onclick="analyze()">Analyze my stack →</button>
+      </div>
+    </div>
+
+    <!-- ── Loading ── -->
+    <div class="section" id="stepLoading">
+      <div style="padding: 80px 0; text-align: center;">
+        <div class="loader-ring"></div>
+        <div class="loader-status" id="loaderStatus">Analyzing your requirements...</div>
+        <div class="loader-sub">This takes about 10–20 seconds</div>
+      </div>
+    </div>
+
+    <!-- ── Results ── -->
+    <div class="section" id="stepResult">
+      <div id="resultContent"></div>
+      <div class="restart-area">
+        <p>Want to evaluate a different project?</p>
+        <div class="restart-btn-row">
+          <button class="btn-restart" onclick="restart()">↺ Analyze another</button>
+          <a href="index.html" class="btn-restart">← Back to home</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /mainApp -->
+
+  <footer>DevPath · Powered by Claude Sonnet · Built for developers</footer>
+
+</div><!-- /app-wrap -->
+
+<script src="daaz.js"></script>
+
+</body>
+</html>
