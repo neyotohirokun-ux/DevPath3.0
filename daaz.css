@@ -7,8 +7,10 @@
       --bg-2:      #111318;
       --bg-3:      #181c23;
       --bg-4:      #1e2330;
+      --bg-5:      #acb2c2;
       --border:    rgba(255,255,255,0.07);
       --border-md: rgba(255,255,255,0.13);
+      --border-md2: rgba(255, 255, 255, 0.486);
       --border-hi: rgba(255,255,255,0.22);
       --text:      #eef0f5;
       --text-2:    #8b90a0;
@@ -71,8 +73,8 @@
     .app-wrap {
       position: relative; 
       z-index: 1;
-      max-width: 760px;
-      margin: 0 auto;
+      max-width: 1020px;
+      margin-inline: 10%;
       padding: 0 24px 80px;
     }
 
@@ -297,14 +299,14 @@
       width: 32px; 
       height: 32px; 
       border-radius: 50%;
-      border: 1px solid var(--border-md);
+      border: 1px solid var(--border-md2);
       background: var(--bg-2);
       display: flex; 
       align-items: center; 
       justify-content: center;
       font-size: 12px; 
       font-weight: 500; 
-      color: var(--text-3);
+      color: var(--border-md2);
       transition: all 0.3s; 
       flex-shrink: 0;
     }
@@ -327,7 +329,7 @@
     .step-connector { 
       flex: 1; 
       height: 1px; 
-      background: var(--border); 
+      background: var(--border-md2); 
       margin: 0 2px; 
       margin-bottom: 22px; 
       transition: background 0.3s; }
@@ -337,7 +339,7 @@
     }
     .step-label { 
       font-size: 10px; 
-      color: var(--text-3); 
+      color: var(--border-md2); 
       font-family: var(--font-mono); 
       text-transform: uppercase; 
       letter-spacing: 0.06em; 
