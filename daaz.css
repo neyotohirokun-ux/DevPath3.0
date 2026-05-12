@@ -73,8 +73,8 @@
     .app-wrap {
       position: relative; 
       z-index: 1;
-      max-width: 1020px;
-      margin-inline: 10%;
+      max-width: auto;
+      margin-inline: 150px;
       padding: 0 24px 80px;
     }
 

@@ -198,10 +198,11 @@ async function analyze() {
       headers: {
         'Content-Type': 'application/json',
         'anthropic-version': '2023-06-01',
-        'anthropic-dangerous-direct-browser-access': 'true'
+        'anthropic-dangerous-direct-browser-access': 'true',
+        'x-api-key': ''
       },
       body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
+        model: 'claude-haiku-4-5-20251001',
         max_tokens: 2000,
         messages: [{ role: 'user', content: buildPrompt() }]
       })
@@ -229,7 +230,7 @@ async function analyze() {
         <div class="error-title">Analysis failed</div>
         <div class="error-body">
           Something went wrong while generating your recommendation.
-          Check that your API key is valid and has access to the Claude claude-sonnet-4-20250514 model.
+          Check that your API key is valid and has access to the Claude claude-haiku-4-5-20251001 model.
         </div>
         <div class="error-code">${e.message}</div>
       </div>`;
